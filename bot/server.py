@@ -122,7 +122,7 @@ def ctx_counts() -> dict:
 
 # ─── GET / (Root Welcome) ───────────────────────────────────────────
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def root():
     return {
         "status": "ok",
@@ -140,7 +140,7 @@ def root():
 
 # ─── GET /v1/healthz ────────────────────────────────────────────────
 
-@app.get("/v1/healthz")
+@app.api_route("/v1/healthz", methods=["GET", "HEAD"])
 def healthz():
     return {
         "status": "ok",
