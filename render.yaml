@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: magicpin-vera-bot
+    env: python
+    buildCommand: pip install -r bot/requirements.txt
+    startCommand: python bot/server.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: TEAM_NAME
+        value: Dhruv Bansal
+      - key: LLM_PROVIDER
+        value: nvidia
+      - key: LLM_MODEL
+        value: meta/llama-3.2-11b-vision-instruct
+      - key: LLM_TIMEOUT
+        value: "30"
